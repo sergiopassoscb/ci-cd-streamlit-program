@@ -37,7 +37,7 @@ jobs:
         run: |
           cd k8s
           kustomize edit set image app-demo-streamlit=sergiopassos/app-demo-streamlit:${{ github.sha }}
-          cat Kustomization.yaml
+          cat kustomization.yaml
       
       - name: commit
         run: |
