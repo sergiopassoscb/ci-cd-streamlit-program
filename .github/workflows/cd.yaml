@@ -50,4 +50,4 @@ jobs:
         with:
           ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
           ssh-key-title: "SSH_PRIVATE_KEY"
-          repository: https://github.com/sergiopassoscb/ci-cd-streamlit-program.git
+          repository: ssh://git@github.com/sergiopassoscb/ci-cd-streamlit-program.git
