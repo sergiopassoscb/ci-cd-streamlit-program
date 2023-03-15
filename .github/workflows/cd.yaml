@@ -40,8 +40,6 @@ jobs:
           cat kustomization.yaml
       
       - name: commit
-        env:
-          TOKEN: ${{ secrets.TOKEN }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "Deploy Action"
@@ -49,3 +47,7 @@ jobs:
       
       - name: push
         uses: ad-m/github-push-action@master
+        with:
+          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-key-title: "SSH_PRIVATE_KEY"
+          repository: git@github.com:sergiopassoscb/ci-cd-streamlit-program.git
