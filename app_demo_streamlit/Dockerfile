@@ -5,13 +5,13 @@ FROM python:3.9-slim-buster
 WORKDIR /app
 
 # Copia o arquivo requirements.txt para o contêiner
-COPY requirements.txt .
+COPY app_demo_streamlit/requirements.txt .
 
 # Instala as dependências do projeto
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copia todos os arquivos da aplicação para o contêiner
-COPY . .
+COPY app_demo_streamlit/ .
 
 # Define a porta que a aplicação irá utilizar
 EXPOSE 8501
