@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-streamlit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demostreamlit
+  template:
+    metadata:
+      labels:
+        app: demostreamlit
+    spec:
+      containers:
+        - name: demostreamlit
+          image: app-demo-streamlit
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8501
+
