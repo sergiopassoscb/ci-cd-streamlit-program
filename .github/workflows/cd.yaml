@@ -40,6 +40,8 @@ jobs:
           cat kustomization.yaml
       
       - name: commit
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "Deploy Action"
