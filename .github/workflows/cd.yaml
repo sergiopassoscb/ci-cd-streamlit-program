@@ -13,6 +13,7 @@ jobs:
       - name: build image and push to docker hub
         uses: docker/build-push-action@v1.1.0
         with:
+          context: app_demo_streamlit/
           username: sergiopassos
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: sergiopassos/app-demo-streamlit
