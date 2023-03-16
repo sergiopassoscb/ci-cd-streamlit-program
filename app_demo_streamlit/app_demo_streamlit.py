@@ -1,7 +1,17 @@
 import streamlit as st
 
+
+page_bg_img = '''
+<style>
+body {
+background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
+background-size: cover;
+}
+</style>
+'''
+
 def main():
-    st.set_page_config(page_title="Minha Aplicação", page_icon=":rocket:", layout="wide", initial_sidebar_state="expanded", background_color="#7d147d")
+    st.markdown(page_bg_img, unsafe_allow_html=True)
     st.title("Minha Aplicação Streamlit Alterado")
     st.write("A aplicação foi atualizada")
     
