@@ -38,12 +38,17 @@ jobs:
           cd k8s
           kustomize edit set image app-demo-streamlit=sergiopassos/app-demo-streamlit:${{ github.sha }}
           cat kustomization.yaml
-      
+
       - name: commit
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "Deploy Action"
           git commit -am "change image tag"
-      
+
+      - name: Add SSH key
+        uses: webfactory/ssh-agent@v0.4.1
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
       - name: push
         uses: ad-m/github-push-action@master
