@@ -1,23 +1,28 @@
 import streamlit as st
-
-
-page_bg_img = '''
-<style>
-body {
-background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
-background-size: cover;
-}
-</style>
-'''
+import pandas as pd
 
 def main():
-    st.markdown(page_bg_img, unsafe_allow_html=True)
     st.title("Minha Aplicação Streamlit Alterado")
     st.write("A aplicação foi atualizada")
     
+    # Cria um botão para carregar os dados
+    if st.button("Carregar Dados"):
+        # Cria um dataframe com dados de teste
+        data = {
+            'Nome': ['João', 'Maria', 'Pedro', 'Ana'],
+            'Idade': [25, 30, 27, 22],
+            'Cidade': ['São Paulo', 'Rio de Janeiro', 'Belo Horizonte', 'Porto Alegre']
+        }
+        df = pd.DataFrame(data)
+        # Mostra o dataframe na página
+        st.write(df)
+    
+    # Cria uma caixa de seleção para filtrar os dados
+    cidade_selecionada = st.selectbox("Selecione uma cidade", df['Cidade'].unique())
+    # Filtra o dataframe de acordo com a cidade selecionada
+    df_filtrado = df[df['Cidade'] == cidade_selecionada]
+    # Mostra o dataframe filtrado na página
+    st.write(df_filtrado)
     
 if __name__ == '__main__':
     main()
-
-# Define a cor de fundo da página como amarelo
-
