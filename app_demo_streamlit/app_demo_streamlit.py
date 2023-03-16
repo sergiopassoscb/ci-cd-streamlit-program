@@ -9,8 +9,5 @@ def main():
 if __name__ == '__main__':
     main()
 
-
-import streamlit as st
-
 # Define a cor de fundo da página como amarelo
 
