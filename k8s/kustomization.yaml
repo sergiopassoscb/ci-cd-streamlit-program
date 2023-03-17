@@ -8,4 +8,4 @@ namespace: streamlit
 images:
 - name: app-demo-streamlit
   newName: sergiopassos/app-demo-streamlit
-  newTag: 59ae3b6a91a78613e9f39d3a5c0f529afdec169c
+  newTag: 8d4be94587d512c7792a7c5264d46a325f8ebc8b
